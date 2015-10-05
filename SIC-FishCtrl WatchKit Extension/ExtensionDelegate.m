@@ -7,6 +7,7 @@
 //
 
 #import "ExtensionDelegate.h"
+#import "SessionMgr.h"
 
 @implementation ExtensionDelegate
 

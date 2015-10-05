@@ -11,15 +11,30 @@
 
 @interface InterfaceController()
 
+@property float accSliderValue;
+
 @end
 
 
 @implementation InterfaceController
 
+# pragma mark - Life Cycle
+- (instancetype)init{
+    self = [super init];
+    [SessionMgr sharedSession];
+    return self;
+}
+
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
 
     // Configure interface objects here.
+    self.accSliderValue = INITIAL_ACC_INTERVAL;
+    [self.accIntervalLabel setText:[NSString stringWithFormat:@"Interval = %.3fs", INITIAL_ACC_INTERVAL]];
+    [self.accIntervalSlider setValue:INITIAL_ACC_INTERVAL];
+//    [[MotionMgr sharedMotion] startAccWithInterval:INITIAL_ACC_INTERVAL];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAccLabels:) name:NOTIFY_NEW_ACC_DATA object:nil];
 }
 
 - (void)willActivate {
@@ -30,6 +45,34 @@
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+# pragma mark - Acc Results
+- (void)updateAccLabels:(id)notification{
+    NSDictionary * accDict = [notification userInfo];
+    CMAccelerometerData * accData = [accDict valueForKey:KEY_TO_ACC_DATA];
+    
+//    NSLog(@"x = %f", accData.acceleration.x);
+    
+    [self.accXLabel setText:[NSString stringWithFormat:@"x = %.4f", accData.acceleration.x]];
+    [self.accYLabel setText:[NSString stringWithFormat:@"y = %.4f", accData.acceleration.y]];
+    [self.accZLabel setText:[NSString stringWithFormat:@"z = %.4f", accData.acceleration.z]];
+}
+
+# pragma mark - Acc Control
+- (IBAction)accIntervalSliderChanged:(float)value {
+    [[MotionMgr sharedMotion] startAccWithInterval:value];
+    
+    self.accSliderValue = value;
+    [self.accIntervalLabel setText:[NSString stringWithFormat:@"Interval = %.3fs", value]];
+}
+
+- (IBAction)accStartButtonPushed {
+    [[MotionMgr sharedMotion] startAccWithInterval:self.accSliderValue];
+}
+
+- (IBAction)accStopButtonPushed {
+    [[MotionMgr sharedMotion] stopAcc];
 }
 
 @end

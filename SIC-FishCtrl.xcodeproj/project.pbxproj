@@ -22,6 +22,11 @@
 		1ADA33EF1BC12F6000D65D9E /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA33EE1BC12F6000D65D9E /* InterfaceController.m */; };
 		1ADA33F21BC12F6000D65D9E /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA33F11BC12F6000D65D9E /* ExtensionDelegate.m */; };
 		1ADA33F41BC12F6000D65D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADA33F31BC12F6000D65D9E /* Assets.xcassets */; };
+		1ADA34131BC1326200D65D9E /* MotionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA34121BC1326200D65D9E /* MotionMgr.m */; settings = {ASSET_TAGS = (); }; };
+		1ADA34181BC1482100D65D9E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADA34171BC1482100D65D9E /* CoreMotion.framework */; };
+		1ADA341A1BC17E0400D65D9E /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADA34191BC17E0400D65D9E /* WatchConnectivity.framework */; };
+		1AEE4DA31BC183B6005A6927 /* SessionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEE4DA21BC183B6005A6927 /* SessionMgr.m */; settings = {ASSET_TAGS = (); }; };
+		1AEE4DA61BC18838005A6927 /* IOSSessionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEE4DA51BC18838005A6927 /* IOSSessionMgr.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +113,15 @@
 		1ADA33F11BC12F6000D65D9E /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		1ADA33F31BC12F6000D65D9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ADA33F51BC12F6000D65D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ADA34111BC1326200D65D9E /* MotionMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionMgr.h; sourceTree = "<group>"; };
+		1ADA34121BC1326200D65D9E /* MotionMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionMgr.m; sourceTree = "<group>"; };
+		1ADA34141BC145CE00D65D9E /* MacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefine.h; sourceTree = "<group>"; };
+		1ADA34171BC1482100D65D9E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		1ADA34191BC17E0400D65D9E /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		1AEE4DA11BC183B6005A6927 /* SessionMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionMgr.h; sourceTree = "<group>"; };
+		1AEE4DA21BC183B6005A6927 /* SessionMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionMgr.m; sourceTree = "<group>"; };
+		1AEE4DA41BC18838005A6927 /* IOSSessionMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSSessionMgr.h; sourceTree = "<group>"; };
+		1AEE4DA51BC18838005A6927 /* IOSSessionMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSSessionMgr.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADA341A1BC17E0400D65D9E /* WatchConnectivity.framework in Frameworks */,
+				1ADA34181BC1482100D65D9E /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +161,8 @@
 		1ADA33A31BC12F6000D65D9E = {
 			isa = PBXGroup;
 			children = (
+				1ADA34191BC17E0400D65D9E /* WatchConnectivity.framework */,
+				1ADA34171BC1482100D65D9E /* CoreMotion.framework */,
 				1ADA33AE1BC12F6000D65D9E /* SIC-FishCtrl */,
 				1ADA33C81BC12F6000D65D9E /* SIC-FishCtrlTests */,
 				1ADA33D31BC12F6000D65D9E /* SIC-FishCtrlUITests */,
@@ -173,6 +191,8 @@
 				1ADA33B31BC12F6000D65D9E /* AppDelegate.m */,
 				1ADA33B51BC12F6000D65D9E /* ViewController.h */,
 				1ADA33B61BC12F6000D65D9E /* ViewController.m */,
+				1AEE4DA41BC18838005A6927 /* IOSSessionMgr.h */,
+				1AEE4DA51BC18838005A6927 /* IOSSessionMgr.m */,
 				1ADA33B81BC12F6000D65D9E /* Main.storyboard */,
 				1ADA33BB1BC12F6000D65D9E /* Assets.xcassets */,
 				1ADA33BD1BC12F6000D65D9E /* LaunchScreen.storyboard */,
@@ -225,6 +245,11 @@
 				1ADA33EE1BC12F6000D65D9E /* InterfaceController.m */,
 				1ADA33F01BC12F6000D65D9E /* ExtensionDelegate.h */,
 				1ADA33F11BC12F6000D65D9E /* ExtensionDelegate.m */,
+				1ADA34111BC1326200D65D9E /* MotionMgr.h */,
+				1ADA34121BC1326200D65D9E /* MotionMgr.m */,
+				1AEE4DA11BC183B6005A6927 /* SessionMgr.h */,
+				1AEE4DA21BC183B6005A6927 /* SessionMgr.m */,
+				1ADA34141BC145CE00D65D9E /* MacroDefine.h */,
 				1ADA33F31BC12F6000D65D9E /* Assets.xcassets */,
 				1ADA33F51BC12F6000D65D9E /* Info.plist */,
 			);
@@ -430,6 +455,7 @@
 				1ADA33B71BC12F6000D65D9E /* ViewController.m in Sources */,
 				1ADA33B41BC12F6000D65D9E /* AppDelegate.m in Sources */,
 				1ADA33B11BC12F6000D65D9E /* main.m in Sources */,
+				1AEE4DA61BC18838005A6927 /* IOSSessionMgr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +480,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ADA33F21BC12F6000D65D9E /* ExtensionDelegate.m in Sources */,
+				1AEE4DA31BC183B6005A6927 /* SessionMgr.m in Sources */,
+				1ADA34131BC1326200D65D9E /* MotionMgr.m in Sources */,
 				1ADA33EF1BC12F6000D65D9E /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,6 +766,7 @@
 				1ADA33FA1BC12F6000D65D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ADA33FC1BC12F6000D65D9E /* Build configuration list for PBXNativeTarget "SIC-FishCtrl WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -746,6 +775,7 @@
 				1ADA33FE1BC12F6000D65D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ADA34001BC12F6000D65D9E /* Build configuration list for PBXNativeTarget "SIC-FishCtrl" */ = {
 			isa = XCConfigurationList;
@@ -754,6 +784,7 @@
 				1ADA34021BC12F6000D65D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ADA34031BC12F6000D65D9E /* Build configuration list for PBXNativeTarget "SIC-FishCtrlTests" */ = {
 			isa = XCConfigurationList;
@@ -762,6 +793,7 @@
 				1ADA34051BC12F6000D65D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ADA34061BC12F6000D65D9E /* Build configuration list for PBXNativeTarget "SIC-FishCtrlUITests" */ = {
 			isa = XCConfigurationList;
@@ -770,6 +802,7 @@
 				1ADA34081BC12F6000D65D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

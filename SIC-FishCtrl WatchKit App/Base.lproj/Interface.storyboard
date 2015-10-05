@@ -1,15 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label width="136" alignment="left" text="x = 1.0" id="ZR8-vG-drP"/>
+                        <label width="136" alignment="left" text="y = 0.0" id="ULe-tv-hbJ"/>
+                        <label width="136" alignment="left" text="z = 0.0" id="iNC-EZ-6Xh"/>
+                        <slider width="1" alignment="left" continuous="YES" value="0.25" maximum="0.5" steps="20" id="68Z-zQ-mMF">
+                            <connections>
+                                <action selector="accIntervalSliderChanged:" destination="AgC-eL-Hgc" id="atN-7q-dZK"/>
+                            </connections>
+                        </slider>
+                        <label width="136" alignment="left" text="Interval = 0.001 s" textAlignment="center" id="YXD-tI-PCu"/>
+                        <button width="1" alignment="left" title="Start" id="c2v-Iy-1hd">
+                            <connections>
+                                <action selector="accStartButtonPushed" destination="AgC-eL-Hgc" id="XUw-Vu-lCH"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Stop" id="wWI-97-5vt">
+                            <connections>
+                                <action selector="accStopButtonPushed" destination="AgC-eL-Hgc" id="8BT-KR-bVx"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="accIntervalLabel" destination="YXD-tI-PCu" id="YUA-hG-ah8"/>
+                        <outlet property="accIntervalSlider" destination="68Z-zQ-mMF" id="Qfj-99-6WI"/>
+                        <outlet property="accXLabel" destination="ZR8-vG-drP" id="ljD-39-MC2"/>
+                        <outlet property="accYLabel" destination="ULe-tv-hbJ" id="yAQ-l4-95J"/>
+                        <outlet property="accZLabel" destination="iNC-EZ-6Xh" id="fR1-Hs-Hrg"/>
+                        <segue destination="Mdx-BU-a9B" kind="relationship" relationship="nextPage" id="iOE-wO-V0B"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="412" y="680.5"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="ych-hM-bKm">
+            <objects>
+                <controller hidesWhenLoading="NO" id="Mdx-BU-a9B">
+                    <items>
+                        <label alignment="left" text="Label" id="aJh-Bf-FJS"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="689" y="680"/>
         </scene>
     </scenes>
 </document>

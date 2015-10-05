@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreMotion/CoreMotion.h>
+#import "MacroDefine.h"
+#import "IOSSessionMgr.h"
 
 @interface ViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *accXLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accYLabel;
+@property (weak, nonatomic) IBOutlet UILabel *accZLabel;
 
 
 @end

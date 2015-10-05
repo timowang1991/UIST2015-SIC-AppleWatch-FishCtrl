@@ -8,7 +8,15 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import "MotionMgr.h"
+#import "SessionMgr.h"
 
 @interface InterfaceController : WKInterfaceController
 
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *accXLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *accYLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *accZLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *accIntervalLabel;
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceSlider *accIntervalSlider;
 @end
