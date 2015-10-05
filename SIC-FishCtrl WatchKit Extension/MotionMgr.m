@@ -55,9 +55,14 @@
 //        NSLog(@"y = %f", accelerometerData.acceleration.y);
 //        NSLog(@"z = %f", accelerometerData.acceleration.z);
         
-        NSDictionary * accDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                        NOTIFY_NEW_ACC_DATA, KEY_TO_NOTIFY_NAME,
-                                        accelerometerData, KEY_TO_ACC_DATA, nil];
+//        NSDictionary * accDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                        NOTIFY_NEW_ACC_DATA, KEY_TO_NOTIFY_NAME,
+//                                        accelerometerData, KEY_TO_ACC_DATA, nil];
+        
+        NSDictionary * accDictionary = @{KEY_TO_NOTIFY_NAME : NOTIFY_NEW_ACC_DATA,
+                                         KEY_TO_ACC_X_DATA : [NSNumber numberWithDouble:accelerometerData.acceleration.x],
+                                         KEY_TO_ACC_Y_DATA : [NSNumber numberWithDouble:accelerometerData.acceleration.y],
+                                         KEY_TO_ACC_Z_DATA : [NSNumber numberWithDouble:accelerometerData.acceleration.z]};
         
         NSNotificationCenter * notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter postNotificationName:NOTIFY_NEW_ACC_DATA object:nil userInfo:accDictionary];

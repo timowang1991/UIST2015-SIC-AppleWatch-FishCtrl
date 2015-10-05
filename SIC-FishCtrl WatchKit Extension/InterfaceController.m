@@ -50,13 +50,10 @@
 # pragma mark - Acc Results
 - (void)updateAccLabels:(id)notification{
     NSDictionary * accDict = [notification userInfo];
-    CMAccelerometerData * accData = [accDict valueForKey:KEY_TO_ACC_DATA];
     
-//    NSLog(@"x = %f", accData.acceleration.x);
-    
-    [self.accXLabel setText:[NSString stringWithFormat:@"x = %.4f", accData.acceleration.x]];
-    [self.accYLabel setText:[NSString stringWithFormat:@"y = %.4f", accData.acceleration.y]];
-    [self.accZLabel setText:[NSString stringWithFormat:@"z = %.4f", accData.acceleration.z]];
+    [self.accXLabel setText:[NSString stringWithFormat:@"x = %.4f", [[accDict valueForKey:KEY_TO_ACC_X_DATA] doubleValue]]];
+    [self.accYLabel setText:[NSString stringWithFormat:@"y = %.4f", [[accDict valueForKey:KEY_TO_ACC_Y_DATA] doubleValue]]];
+    [self.accZLabel setText:[NSString stringWithFormat:@"z = %.4f", [[accDict valueForKey:KEY_TO_ACC_Z_DATA] doubleValue]]];
 }
 
 # pragma mark - Acc Control

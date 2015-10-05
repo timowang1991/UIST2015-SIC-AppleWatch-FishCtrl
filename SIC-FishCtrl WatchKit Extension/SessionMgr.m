@@ -29,6 +29,10 @@
         session.delegate = self;
         [session activateSession];
         NSLog(@"WCSession is Supported");
+        
+        if (![WCSession defaultSession].reachable) {
+            NSLog(@"WCSession is unreachable");
+        }
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendAccDataToIPhone:) name: NOTIFY_NEW_ACC_DATA object:nil];
@@ -37,6 +41,11 @@
 }
 
 - (void)sendAccDataToIPhone:(id)notification{
+    if (![WCSession defaultSession].reachable) {
+        NSLog(@"WCSession is unreachable");
+        return;
+    }
+    
     NSDictionary * accDict = [notification userInfo];
     
     NSLog(@"sendAccDataToIPhone");

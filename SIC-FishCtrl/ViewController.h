@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreMotion/CoreMotion.h>
 #import "MacroDefine.h"
 #import "IOSSessionMgr.h"
 

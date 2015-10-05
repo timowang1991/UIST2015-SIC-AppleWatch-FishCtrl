@@ -29,7 +29,13 @@
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
         [session activateSession];
+        NSLog(@"WCSession on iOS is supported");
+        
+        if (![WCSession defaultSession].reachable) {
+            NSLog(@"WCSession is unreachable");
+        }
     }
+    
     return self;
 }
 

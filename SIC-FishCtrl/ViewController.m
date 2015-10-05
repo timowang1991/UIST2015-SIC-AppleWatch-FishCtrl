@@ -16,6 +16,7 @@
 
 - (instancetype) init{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAccValues:) name:NOTIFY_NEW_ACC_DATA object:nil];
+    [IOSSessionMgr sharedSession];
     return self;
 }
 
@@ -30,11 +31,12 @@
 }
 
 - (void)updateAccValues:(id)notification{
-    CMAccelerometerData * accData = [[notification userInfo] valueForKey:KEY_TO_ACC_DATA];
+    NSDictionary * accDict = [notification userInfo];
+//    [self.accXLabel setText:@"message received"];
 //    [self.accXLabel setText:[NSString stringWithFormat:@"----"]];
-    [self.accXLabel setText:[NSString stringWithFormat:@"x = %.4f", accData.acceleration.x]];
-    [self.accYLabel setText:[NSString stringWithFormat:@"y = %.4f", accData.acceleration.y]];
-    [self.accZLabel setText:[NSString stringWithFormat:@"z = %.4f", accData.acceleration.z]];
+    [self.accXLabel setText:[NSString stringWithFormat:@"x = %.4f", [[accDict valueForKey:KEY_TO_ACC_X_DATA] doubleValue]]];
+    [self.accYLabel setText:[NSString stringWithFormat:@"y = %.4f", [[accDict valueForKey:KEY_TO_ACC_Y_DATA] doubleValue]]];
+    [self.accZLabel setText:[NSString stringWithFormat:@"z = %.4f", [[accDict valueForKey:KEY_TO_ACC_Z_DATA] doubleValue]]];
 }
 
 @end

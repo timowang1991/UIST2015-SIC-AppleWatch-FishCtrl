@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "IOSSessionMgr.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [IOSSessionMgr sharedSession];
     return YES;
 }
 

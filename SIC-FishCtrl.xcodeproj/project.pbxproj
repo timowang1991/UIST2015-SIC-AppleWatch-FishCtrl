@@ -24,7 +24,6 @@
 		1ADA33F41BC12F6000D65D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADA33F31BC12F6000D65D9E /* Assets.xcassets */; };
 		1ADA34131BC1326200D65D9E /* MotionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA34121BC1326200D65D9E /* MotionMgr.m */; settings = {ASSET_TAGS = (); }; };
 		1ADA34181BC1482100D65D9E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADA34171BC1482100D65D9E /* CoreMotion.framework */; };
-		1ADA341A1BC17E0400D65D9E /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADA34191BC17E0400D65D9E /* WatchConnectivity.framework */; };
 		1AEE4DA31BC183B6005A6927 /* SessionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEE4DA21BC183B6005A6927 /* SessionMgr.m */; settings = {ASSET_TAGS = (); }; };
 		1AEE4DA61BC18838005A6927 /* IOSSessionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEE4DA51BC18838005A6927 /* IOSSessionMgr.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -117,7 +116,6 @@
 		1ADA34121BC1326200D65D9E /* MotionMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionMgr.m; sourceTree = "<group>"; };
 		1ADA34141BC145CE00D65D9E /* MacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefine.h; sourceTree = "<group>"; };
 		1ADA34171BC1482100D65D9E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
-		1ADA34191BC17E0400D65D9E /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		1AEE4DA11BC183B6005A6927 /* SessionMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionMgr.h; sourceTree = "<group>"; };
 		1AEE4DA21BC183B6005A6927 /* SessionMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionMgr.m; sourceTree = "<group>"; };
 		1AEE4DA41BC18838005A6927 /* IOSSessionMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSSessionMgr.h; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ADA341A1BC17E0400D65D9E /* WatchConnectivity.framework in Frameworks */,
 				1ADA34181BC1482100D65D9E /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +158,6 @@
 		1ADA33A31BC12F6000D65D9E = {
 			isa = PBXGroup;
 			children = (
-				1ADA34191BC17E0400D65D9E /* WatchConnectivity.framework */,
 				1ADA34171BC1482100D65D9E /* CoreMotion.framework */,
 				1ADA33AE1BC12F6000D65D9E /* SIC-FishCtrl */,
 				1ADA33C81BC12F6000D65D9E /* SIC-FishCtrlTests */,
