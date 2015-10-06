@@ -14,4 +14,7 @@
 
 + (id)sharedSession;
 
+@property double x;
+@property NSString * notificationName;
+
 @end

@@ -25,6 +25,7 @@
 }
 
 - (id)init{
+    NSLog(@"iOS init");
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];
         session.delegate = self;
@@ -35,14 +36,32 @@
             NSLog(@"WCSession is unreachable");
         }
     }
-    
     return self;
 }
 
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
-    NSString * notificationName = [message valueForKey:KEY_TO_NOTIFY_NAME];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName: notificationName object:nil userInfo:message];
+//- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSString * notificationName = [message valueForKey:KEY_TO_NOTIFY_NAME];
+//        
+//        self.x = [[message valueForKey:KEY_TO_ACC_X_DATA] doubleValue];
+//        self.notificationName = notificationName;
+//        [[NSNotificationCenter defaultCenter] postNotificationName: notificationName object:nil userInfo:message];
+//    });
+//}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message{
+    NSLog(@"x = %@, y = %@, z = %@",
+          [message valueForKey:KEY_TO_ACC_X_DATA],
+          [message valueForKey:KEY_TO_ACC_Y_DATA],
+          [message valueForKey:KEY_TO_ACC_Z_DATA]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString * notificationName = [message valueForKey:KEY_TO_NOTIFY_NAME];
+        
+        self.x = [[message valueForKey:KEY_TO_ACC_X_DATA] doubleValue];
+        self.notificationName = notificationName;
+        [[NSNotificationCenter defaultCenter] postNotificationName: notificationName object:nil userInfo:message];
+    });
 }
 
 @end

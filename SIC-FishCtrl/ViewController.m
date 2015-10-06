@@ -14,10 +14,9 @@
 
 @implementation ViewController
 
-- (instancetype) init{
+- (void)viewWillAppear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAccValues:) name:NOTIFY_NEW_ACC_DATA object:nil];
     [IOSSessionMgr sharedSession];
-    return self;
 }
 
 - (void)viewDidLoad {
@@ -39,4 +38,9 @@
     [self.accZLabel setText:[NSString stringWithFormat:@"z = %.4f", [[accDict valueForKey:KEY_TO_ACC_Z_DATA] doubleValue]]];
 }
 
+- (IBAction)updateButtonPushed:(id)sender {
+    IOSSessionMgr * sessionMgr = [IOSSessionMgr sharedSession];
+//    [self.accXLabel setText:[NSString stringWithFormat:@"%.4f", sessionMgr.x]];
+    [self.accXLabel setText:sessionMgr.notificationName];
+}
 @end
